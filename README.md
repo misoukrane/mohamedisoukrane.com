@@ -5,5 +5,5 @@ My simple personal website.
 TODO: Describe the installation process
 
 ## Dependencies
-1. Gulp!
-2. Bootstrap
+1. Bower
+2. NPM

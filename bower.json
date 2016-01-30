@@ -1,0 +1,17 @@
+{
+  "name": "mohamedisoukrane.com",
+  "authors": [
+    "misoukrane <isoukrane.mohamed@gmail.com>"
+  ],
+  "description": "My personal site",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
