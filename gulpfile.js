@@ -28,34 +28,34 @@ gulp.task('html', () => {
 
 // Static Server + watching html/sass files
 gulp.task('serve', ['styles'], function() {
-    browserSync.init({
-      server: ['.tmp', 'app'],
-      port: 3000
-    });
+  browserSync.init({
+    server: ['.tmp', 'app'],
+    port: 3000
+  });
 
-    // watch files
-    gulp.watch("app/*.html").on('change', browserSync.reload);
-    gulp.watch("app/styles/**/*.scss").on('change', ['styles', browserSync.reload]);
+  // watch files
+  gulp.watch(['app/**/*.html'], browserSync.reload);
+  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', browserSync.reload]);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('styles', ['vendor-styles'], function() {
-    return gulp.src("app/styles/**/*.scss")
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(gulp.dest(".tmp/styles"))
-        .pipe(postcss([nano]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/styles'));
+  return gulp.src("app/styles/**/*.scss")
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(gulp.dest(".tmp/styles"))
+      .pipe(postcss([nano]))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/styles'));
 });
 
 // compile vendor styles.
 gulp.task('vendor-styles', function() {
-    return gulp.src("bower_components/Skeleton-Sass/scss/skeleton.scss")
-        .pipe(sass())
-        .pipe(gulp.dest(".tmp/styles"))
-        .pipe(postcss([nano]))
-        .pipe(gulp.dest('dist/styles'));
+  return gulp.src("bower_components/Skeleton-Sass/scss/skeleton.scss")
+      .pipe(sass())
+      .pipe(gulp.dest(".tmp/styles"))
+      .pipe(postcss([nano]))
+      .pipe(gulp.dest('dist/styles'));
 });
 
 // Clean output directory
