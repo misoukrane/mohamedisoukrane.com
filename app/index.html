@@ -30,10 +30,102 @@
 
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#2F3BA2">
+
+    <!-- Raleway font -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- load skeleton css -->
     <link rel="stylesheet" href="/styles/skeleton.css">
   </head>
-  <body class="">
-    <h1>Mohamed Isoukrane</h1>
+  <body>
+      <header class="container header">
+        <h3>Hi, I am <b>Mohamed Isoukrane</b>,</h3>
+        <h3>a full-stack web developer.</h3>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li class="main-nav-list-item">
+              <a href="#about">About</a>
+            </li><!--
+            --><li class="main-nav-list-item">
+              <a href="#connect">Connect</a>
+            </li><!--
+            --><li class="main-nav-list-item">
+              <a href="#contact">Contact</a>
+            </li>
+            <!--
+            --><li class="main-nav-list-item">
+              <a href="#resume">Resume</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section id="about" class="container">
+        <h1><div class="header-icon glyph-icon flaticon-businessman65"></div> About me</h1>
+        <div class="u-cf">
+          <p>
+            <img class="avatar" src="images/me.jpg" />
+            First of all, Hi there! and thank for stoping by this site.
+            <br><br>
+            I am orignally from Morocco, and I moved to the U.S. 5 years ago. During these years, I fell in love with software engineering; especially, the web part. During my free tim I like to read, play soccer, and write.
+            <br><br>
+            I am also a full stack developer living at Chapel Hill, NC. I am experienced with all stages of software development cycle. Furthermore, I am well versed in various programming languages and frameworks.
+            <br><br>
+            I am available for freelancing projects. Feel free to drop me a note <a href="#contact">here</a>.
+          </p>
+        </div>
+      </section>
+      <hr>
+      <section id="connect" class="container">
+        <h1 class="text-right"><div class="header-icon glyph-icon flaticon-socialnetwork12"></div> Connect</h1>
+        <h3 class="text-center">Feel free to connect with me!</h3>
+        <ul class="social-list">
+          <li class="social-list-item">
+            <a class ="twitter-color" href="https://twitter.com/misoukrane" target="_blank">
+              <h3 class="header-icon glyph-icon flaticon-twitter1"></h3>
+            </a>
+          </li><!----><li class="social-list-item" >
+            <a class ="github-color" href="https://github.com/misoukrane" target="_blank">
+              <h3 class="header-icon glyph-icon flaticon-socialnetwork363"></h3>
+            </a>
+          </li><!----><li class="social-list-item" >
+            <a class ="facebook-color" href="https://www.facebook.com/mohamed.isoukrane" target="_blank">
+              <h3 class="header-icon glyph-icon flaticon-facebook55"></h3>
+            </a>
+          </li><!----><li class="social-list-item">
+            <a class ="linkedin-color" href="https://www.linkedin.com/in/mohamed-isoukrane-89507864" target="_blank">
+              <h3 class="header-icon glyph-icon flaticon-socialnetwork106"></h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <hr>
+      <section id="contact" class="container">
+        <h1><div class="header-icon glyph-icon flaticon-standing75"></div> Contact</h1>
+        <iframe id="JotFormIFrame" onload="window.parent.scrollTo(0,0)"
+        allowtransparency="true"   src="https://form.jotform.com/60324963113146"
+        frameborder="0" style="width:100%; height:539px; border:none;" scrolling="no">
+        </iframe>
+      </section>
+      <hr>
+      <section id="resume" class="container">
+        <h1 class="text-right"><div class="header-icon glyph-icon flaticon-job3"></div> Resume</h1>
+      </section>
+      <footer>
+        <div style="display: none;">
+          Icons made by
+          <a href="http://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a>,
+          <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+          <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a>,
+          <a href="http://www.flaticon.com/authors/ocha" title="OCHA">OCHA</a>,
+          <a href="http://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a>
+          from
+          <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
+          is licensed by
+          <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
+        </div>
+      </footer>
     <link rel="stylesheet" href="/styles/main.css">
+    <script type="text/javascript"> window.handleIFrameMessage = function(e) { var args = e.data.split(":"); var iframe = document.getElementById("JotFormIFrame"); if (!iframe) return; switch (args[0]) { case "scrollIntoView": iframe.scrollIntoView(); break; case "setHeight": iframe.style.height = args[1] + "px"; break; case "collapseErrorPage": if (iframe.clientHeight > window.innerHeight) { iframe.style.height = window.innerHeight + "px"; } break; case "reloadPage": window.location.reload(); break; } var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false; if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) { var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)}; iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*"); } }; if (window.addEventListener) { window.addEventListener("message", handleIFrameMessage, false); } else if (window.attachEvent) { window.attachEvent("onmessage", handleIFrameMessage); } if(window.location.href && window.location.href.indexOf("?") > -1) { var ifr = document.getElementById("JotFormIFrame"); var get = window.location.href.substr(window.location.href.indexOf("?") + 1); if(ifr && get.length > 0) { var src = ifr.src; src = src.indexOf("?") > -1 ? src + "&" + get : src + "?" + get; ifr.src = src; } }
+    </script>
   </body>
 </html>

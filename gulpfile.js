@@ -1,7 +1,9 @@
 var browserSync = require('browser-sync').create();
+var cache = require('gulp-cache');
 var del = require('del');
 var gulp = require('gulp');
 var gulpIf = require('gulp-if');
+var imagemin = require('gulp-imagemin');
 var minifyHtml = require('gulp-html-minify');
 var nano = require('cssnano');
 var postcss = require('gulp-postcss');
@@ -17,6 +19,26 @@ gulp.task('copy', function() {
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+// Copy fonts
+gulp.task('fonts', function() {
+  return gulp.src([
+    'app/styles/*.eot',
+    'app/styles/*.svg',
+    'app/styles/*.ttf',
+    'app/styles/*.woff'
+  ]).pipe(gulp.dest('dist/styles'));
+});
+
+// Optimize images
+gulp.task('images', function() {
+  return gulp.src('app/images/**/*')
+    .pipe(cache(imagemin({
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest('dist/images'));
 });
 
 // Scan your HTML for assets & optimize them
@@ -67,7 +89,7 @@ gulp.task('clean', function() {
 gulp.task('default', ['clean'], function(callback) {
   runSequence(
     'styles',
-    ['html', 'copy'],
+    ['html', 'copy', 'fonts', 'images'],
     callback
   );
 });
