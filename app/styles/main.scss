@@ -53,6 +53,25 @@
   }
 }
 
+/* Resume */
+.experience-title {
+	margin-bottom: 0;
+}
+.experience-organiztaion {
+
+}
+.experience-time {
+	float: right;
+}
+.experience-list {
+	margin-left: 3%;
+}
+.skills-list {
+	h6 {
+		margin-bottom: 0.7rem;
+	}
+}
+
 /* Shared style */
 .header-icon {
   display: inline;
@@ -74,4 +93,7 @@
 }
 .linkedin-color {
   color: #007bb5;
+}
+.social-link {
+	text-decoration: none;
 }
