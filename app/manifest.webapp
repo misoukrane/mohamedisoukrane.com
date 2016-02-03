@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Web Starter Kit",
+  "launch_path": "/index.html",
+  "description": "Mohamed Isoukrane's website",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Mohamed Isoukrane",
+    "url": "http://mohamedisoukrane.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Mohamed Isoukrane",
+      "description": "Mohamed Isoukrane's site"
+    }
+  }
+}
