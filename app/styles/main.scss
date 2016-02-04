@@ -26,6 +26,11 @@
 .main-nav-list-item a {
   border-radius: 20px;
 }
+.section-header {
+	@media screen and (max-width: 420px) {
+    text-align: center !important;
+  }
+}
 
 /* About Section */
 .avatar {
@@ -57,9 +62,6 @@
 .experience-title {
 	margin-bottom: 0;
 }
-.experience-organiztaion {
-
-}
 .experience-time {
 	float: right;
 }
@@ -67,8 +69,14 @@
 	margin-left: 3%;
 }
 .skills-list {
+	ul {
+		margin-top: 0.1rem;
+	}
+	li {
+		margin-bottom: 0.2rem;
+	}
 	h6 {
-		margin-bottom: 0.7rem;
+		margin-bottom: 0.1rem;
 	}
 }
 
