@@ -61,22 +61,13 @@ gulp.task('serve', ['styles'], function() {
 });
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('styles', ['vendor-styles'], function() {
+gulp.task('styles', function() {
   return gulp.src("app/styles/**/*.scss")
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(gulp.dest(".tmp/styles"))
       .pipe(postcss([nano]))
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/styles'));
-});
-
-// compile vendor styles.
-gulp.task('vendor-styles', function() {
-  return gulp.src("bower_components/Skeleton-Sass/scss/skeleton.scss")
-      .pipe(sass())
-      .pipe(gulp.dest(".tmp/styles"))
-      .pipe(postcss([nano]))
       .pipe(gulp.dest('dist/styles'));
 });
 
