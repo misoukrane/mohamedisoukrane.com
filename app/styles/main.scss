@@ -50,7 +50,7 @@
   list-style: none;
 }
 .social-list-item {
-  width: 25%;
+  width: 50%;
   display: inline-block;
   text-align: center;
   a {
@@ -70,13 +70,14 @@
 }
 .skills-list {
 	ul {
-		margin-top: 0.1rem;
+		margin-top: 0.4rem;
 	}
 	li {
-		margin-bottom: 0.2rem;
+		margin-bottom: 0.3rem;
 	}
 	h6 {
-		margin-bottom: 0.1rem;
+		margin-bottom: 0.3rem;
+		display: inline;
 	}
 }
 

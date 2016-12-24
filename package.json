@@ -15,13 +15,14 @@
   "bugs": {
     "url": "https://github.com/misoukrane/mohamedisoukrane.com/issues"
   },
-  "homepage": "https://github.com/misoukrane/mohamedisoukrane.com#readme",
+  "homepage": "https://github.com/misoukrane/mohamedisoukrane.com",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "cssnano": "^3.4.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-cache": "^0.4.2",
+    "gulp-gzip": "^1.4.0",
     "gulp-html-minify": "0.0.13",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
