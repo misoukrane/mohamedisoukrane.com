@@ -9,7 +9,6 @@ var nano = require('cssnano');
 var postcss = require('gulp-postcss');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
-var gzip = require('gulp-gzip');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Copy all files at the root level (app)
@@ -20,7 +19,6 @@ gulp.task('copy', function() {
   ], {
     dot: true
   })
-  .pipe(gzip({ gzipOptions: { level: 9 } , append: false}))
   .pipe(gulp.dest('dist'));
 });
 
@@ -32,7 +30,6 @@ gulp.task('fonts', function() {
     'app/styles/*.ttf',
     'app/styles/*.woff'
   ])
-  .pipe(gzip({ gzipOptions: { level: 9 } , append: false}))
   .pipe(gulp.dest('dist/styles'));
 });
 
@@ -43,7 +40,6 @@ gulp.task('images', function() {
       progressive: true,
       interlaced: true
     })))
-    .pipe(gzip({ gzipOptions: { level: 9 } , append: false}))
     .pipe(gulp.dest('dist/images'));
 });
 
@@ -51,7 +47,6 @@ gulp.task('images', function() {
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
     .pipe(gulpIf('*.html', minifyHtml()))
-    .pipe(gzip({ gzipOptions: { level: 9 } , append: false}))
     .pipe(gulp.dest('dist'));
 });
 
@@ -75,7 +70,6 @@ gulp.task('styles', function() {
       .pipe(gulp.dest(".tmp/styles"))
       .pipe(postcss([nano]))
       .pipe(sourcemaps.write('.'))
-      .pipe(gzip({ gzipOptions: { level: 9 } , append: false}))
       .pipe(gulp.dest('dist/styles'));
 });
 
